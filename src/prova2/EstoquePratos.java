@@ -9,9 +9,11 @@ import Excessoes.ValorInvalidoException;
 public class EstoquePratos {
 	
 	private ArrayList<PratoPersonalizado> listaPratos;
+	private FactoryPratos fp;
 	
 	public EstoquePratos(){
 		this.listaPratos = new ArrayList<PratoPersonalizado>();
+		fp = new FactoryPratos();
 	}
 
 	public boolean adicionaPrato(PratoPersonalizado prato){
@@ -86,21 +88,19 @@ public class EstoquePratos {
 	
 	public PratoRetangular criaPratoRetangular(double precoBase, String personalizacao, int base, int altura) 
 			throws StringInvalidaException, ValorInvalidoException{
-		PratoRetangular pr = new PratoRetangular(precoBase, personalizacao, base, altura);
-		return pr;
+		return fp.criaPratoRetangular(precoBase, personalizacao, base, altura);
 	}
 	
 	public PratoCircular criaPratoCircular(double precoBase, String personalizacao, int raio) 
 			throws StringInvalidaException, ValorInvalidoException{
-		PratoCircular pc = new PratoCircular(precoBase, personalizacao, raio);
-		return pc;
+		return fp.criaPratoCircular(precoBase, personalizacao, raio);
 	}
 	
 	public PratoTriangular criaPratoTriangular(double precoBase, String personalizacao, int base, int altura) 
 			throws StringInvalidaException, ValorInvalidoException{
-		PratoTriangular pt = new PratoTriangular(precoBase, personalizacao, base, altura);
-		return pt;
+		return fp.criaPratoTriangular(precoBase, personalizacao, base, altura);
 	}
+	
 
 	public ArrayList<PratoPersonalizado> getListaPratos() {
 		return listaPratos;

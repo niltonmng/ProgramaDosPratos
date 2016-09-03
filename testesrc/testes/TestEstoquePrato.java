@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.Assert;
 
 import prova2.EstoquePratos;
+import prova2.FactoryPratos;
 import prova2.PratoPersonalizado;
 
 public class TestEstoquePrato {

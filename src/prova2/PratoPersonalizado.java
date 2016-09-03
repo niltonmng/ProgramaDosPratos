@@ -3,7 +3,7 @@ package prova2;
 import Excessoes.StringInvalidaException;
 import Excessoes.ValorInvalidoException;
 
-public abstract class PratoPersonalizado {
+public abstract class PratoPersonalizado implements Comparable{
 	
 	private double precoBase;
 	private String personalizacao;
@@ -67,5 +67,15 @@ public abstract class PratoPersonalizado {
 			}
 		}
 		return false;
+	}
+
+	public int compareTo(PratoPersonalizado prato) {
+		if(this.getPrecoBase() > prato.getPrecoBase()){
+			return 1;
+		}else if(this.getPrecoBase() < prato.getPrecoBase()){
+			return -1;
+		}else{
+			return 0;			
+		}
 	}
 }
