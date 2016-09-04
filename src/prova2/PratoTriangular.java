@@ -43,4 +43,9 @@ public class PratoTriangular extends PratoPersonalizado {
 	private double calculaArea() {
 		return (base * altura)/2.0;
 	}
+
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

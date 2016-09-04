@@ -38,4 +38,9 @@ public class PratoCircular extends PratoPersonalizado {
 	private double calculaArea() {
 		return 3.14 * raio * raio;
 	}
+
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

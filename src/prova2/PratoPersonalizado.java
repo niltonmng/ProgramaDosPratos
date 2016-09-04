@@ -48,17 +48,18 @@ public abstract class PratoPersonalizado implements Comparable{
 		}
 		return "Prato com " + personalizacao + " que custa R$ "+ this.getPrecoBase() + ".";
 	}
+	
 
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((personalizacao == null) ? 0 : personalizacao.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(precoBase);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result
+				+ ((personalizacao == null) ? 0 : personalizacao.hashCode());
 		return result;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof PratoPersonalizado){
 			PratoPersonalizado p = (PratoPersonalizado)obj;
@@ -68,7 +69,7 @@ public abstract class PratoPersonalizado implements Comparable{
 		}
 		return false;
 	}
-
+	
 	public int compareTo(PratoPersonalizado prato) {
 		if(this.getPrecoBase() > prato.getPrecoBase()){
 			return 1;

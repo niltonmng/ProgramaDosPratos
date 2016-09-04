@@ -61,22 +61,16 @@ public class EstoquePratos {
 		List<PratoPersonalizado> auxiliar = new ArrayList<PratoPersonalizado>();
 		
 		for (int i = 0; i < this.getListaPratos().size(); i++) {			
-			double menor = this.getListaPratos().get(i).calculaPrecoFinal();
 			PratoPersonalizado menorPrato = this.getListaPratos().get(i);
 			for (int j = 0; j < this.getListaPratos().size(); j++) {
-				double atual = this.getListaPratos().get(j).calculaPrecoFinal();
 				PratoPersonalizado pratoAtual = this.getListaPratos().get(j);
-				if(atual < menor){
-					menor = atual;
+				if(pratoAtual.compareTo(menorPrato) > 0){
 					menorPrato = pratoAtual;
 				}
+				break;
 			}
 			auxiliar.add(menorPrato);
 			this.getListaPratos().remove(menorPrato);
-		}
-		
-		for (int i = this.getListaPratos().size(); i < -1; i++) {
-			this.getListaPratos().remove(i);
 		}
 		
 		for (int i = 0; i < auxiliar.size(); i++) {

@@ -113,9 +113,9 @@ public class TestEstoquePrato {
 		Assert.assertTrue(estoque.adicionaPrato(pratoTriangular));
 		
 		Assert.assertEquals(3, estoque.getQtdPratos(), 0.01);
-
+		//System.out.println(estoque.getListaPratos());
 		List<PratoPersonalizado> pratos = estoque.getPratosOrdenadosPorPreco();
-		
+		//System.out.println(estoque.getListaPratos());
 		Assert.assertEquals(12.0, pratos.get(0).calculaPrecoFinal(), 0.01);
 		Assert.assertEquals(12.7, pratos.get(1).calculaPrecoFinal(), 0.01);
 		Assert.assertEquals(34.26, pratos.get(2).calculaPrecoFinal(), 0.01);		
