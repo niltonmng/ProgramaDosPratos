@@ -40,7 +40,13 @@ public class PratoCircular extends PratoPersonalizado {
 	}
 
 	public int compareTo(Object arg0) {
-		// TODO Auto-generated method stub
-		return 0;
+		PratoPersonalizado prato = (PratoPersonalizado) arg0;
+		if(this.getPrecoBase() > prato.getPrecoBase()){
+			return 1;
+		}else if(this.getPrecoBase() < prato.getPrecoBase()){
+			return -1;
+		}else{ // if(this.getPrecoBase() == prato.getPrecoBase())
+			return 0;			
+		}
 	}
 }
