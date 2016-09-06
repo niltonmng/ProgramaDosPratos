@@ -75,7 +75,7 @@ public abstract class PratoPersonalizado implements Comparable{
 			return 1;
 		}else if(this.getPrecoBase() < prato.getPrecoBase()){
 			return -1;
-		}else{
+		}else{ // if(this.getPrecoBase() == prato.getPrecoBase())
 			return 0;			
 		}
 	}
